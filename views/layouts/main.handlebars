@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tech Blog Website</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="browse">
+                <ul class="nav-tab">
+                    <li class="tab"> <a href="/">Home</a></li>
+                    <li class="tab"> <a href="/dashboard">Dashboard</a></li>
+                    <li class="tab"><a href="/login">Login</a></li>
+                    <button class="tab dash-btn" id="logout">Logout</button>
+                </ul>
+            </div>
+            <div class="infoBox">
+                <div class="brand-logo">
+                    <h1>The Tech Blog</h1>
+                </div>
+                <div class="notice fadeOut">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {{{body}}}
+    </main>
+    {{!-- scripts  --}}
+    <script src="/js/logout.js"></script>
+</body>
+</html>

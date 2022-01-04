@@ -1,10 +1,10 @@
 // import dependencies
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const db = require('../config/connection');
+const sequelize = require('../config/connection');
 
 class User extends Model {
-    // check password per user on instance data
+    // check password for user
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
@@ -13,19 +13,14 @@ class User extends Model {
 User.init(
     {
         id: {
-            type: DataTypes.UUID,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
-            defaultValue: DataTypes.UUIDV4
         },
         username: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true
-            }
+            allowNull: false
         },
         password: {
             type: DataTypes.STRING,
@@ -47,12 +42,11 @@ User.init(
             }
         },
         // table configurations
-        db,
+        sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
         modelName: 'User',
-        tableName: 'users'
     }
 );
 

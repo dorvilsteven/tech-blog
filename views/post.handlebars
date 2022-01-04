@@ -1,0 +1,55 @@
+<section>
+    <div class="blog-card">
+        <div class="title-content">
+            <div class="title">
+                <h3>{{info.title}}</h3>
+            </div>
+            <div class="user-date">
+                <p>Posted by {{info.user.username}},{{formaDate info.created_at}}</p>
+            </div>
+        </div>
+        <div class="content">
+            <p class="content-text">{{info.comment}}</p>
+        </div>
+    </div>
+</section>
+
+{{#each info.comments}}
+    <section>
+        <div class="blog-card">
+
+            <div class="title-content">
+                <div class="title">
+                    <p> {{user.username}}</p>
+                </div>
+
+            </div>
+            <div class="content">
+                <p>
+                    {{comment_text}} 
+                    </br>
+                    {{created_at}}
+                </p>
+            </div>
+        </div>
+        </div>
+    </section>
+{{/each}}
+
+<section>
+    <div class="blog-card">
+        <div class="title-content">
+            <div class="title">
+                <h3>Comment</h3>
+            </div>
+        </div>
+        <div class="input-box">
+            <textarea id="textBox1"></textarea>
+        </div>
+        <div class="btn-box">
+            <button id="submitBtn" class="btn">Submit</button>
+        </div>
+    </div>
+</section>
+
+<script src="/js/comment.js"></script>

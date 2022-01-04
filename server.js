@@ -2,18 +2,18 @@ const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
-
 const routes = require('./routes');
-
 const sequelize = require('./config/connection');
 const sequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3005;
 
+const handlebars = exphbs.create({helpers});
+
 // save session
 const newSession = {
-    secret: "",
+    secret: "secret secret",
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -21,16 +21,15 @@ const newSession = {
         db: sequelize
     })
 };
-app.use(session(newSession));
 
 // setup template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
+app.engine('handlebars', handlebars.engine)
+app.set('view engine', 'handlebars')
 // setup middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(newSession));
 // use routes 
 app.use(routes);
 
