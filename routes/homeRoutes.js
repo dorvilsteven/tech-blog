@@ -56,7 +56,7 @@ router.get('/dashboard', Auth, (req,res) =>{
     });
 });
 
-router.get('/dashboard/update-post/:id',Auth, (req,res)=>{
+router.get('/dashboard/post/:id', Auth, (req,res)=>{
     Post.findOne({
         where: {
             id: req.params.id
@@ -73,9 +73,9 @@ router.get('/dashboard/update-post/:id',Auth, (req,res)=>{
     });
 });
 
-router.get('/dashboard/create', Auth, (req,res) => res.render('addPost'));
+router.get('/dashboard/new', Auth, (req,res) => res.render('addPost'));
 
-router.get('/post/:id', Auth, (req,res) =>{
+router.get('/dashboard/post/:id', Auth, (req,res) =>{
     Post.findOne({
         where: {
             id: req.params.id
