@@ -1,0 +1,15 @@
+:root {
+  --primary: rgb(225, 240, 200);
+  --secondary: rgb(55, 28, 28);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--primary);
+}
