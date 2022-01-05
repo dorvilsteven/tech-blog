@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'comment',
+            'text',
             'created_at',
             'user_id'
         ],
