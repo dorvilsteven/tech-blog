@@ -3,13 +3,14 @@ const seedUsers = require('./user');
 const seedPosts = require('./post');
 const seedComments = require('./comment');
 
-const seedAll = async () => {
+async function seedAll() {
   await sequelize.sync({ force: true });
   console.log('\nseeding...');
   await seedUsers();
   await seedPosts();
   await seedComments();
-  process.exit(0);
-};
+}
 
-seedAll();
+seedAll().then(
+  process.exit(0)
+);

@@ -2,40 +2,40 @@ const { User } = require('../models');
 
 const userdata = [
   {
-    username:'RandomGeneratedUser01',
-    password: 'RandomGeneratedPassword123'
+    username:'User01',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser03',
-    password: 'RandomGeneratedPassword123'
+    username:'User03',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser04',
-    password: 'RandomGeneratedPassword123'
+    username:'User04',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser05',
-    password: 'RandomGeneratedPassword123'
+    username:'User05',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser06',
-    password: 'RandomGeneratedPassword123'
+    username:'User06',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser07',
-    password: 'RandomGeneratedPassword123'
+    username:'User07',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser08',
-    password: 'RandomGeneratedPassword123'
+    username:'User08',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser09',
-    password: 'RandomGeneratedPassword123'
+    username:'User09',
+    password: 'Password123'
   },
   {
-    username:'RandomGeneratedUser10',
-    password: 'RandomGeneratedPassword123'
+    username:'User10',
+    password: 'Password123'
   }
 ];
 
