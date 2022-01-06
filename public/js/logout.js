@@ -19,9 +19,7 @@ function notification3 () {
     textEl.textContent = "You're Logged Out!";
     divEl.append(textEl);
     
-    setTimeout(()=>{
-        document.location.reload();
-    }, 20000);
+    document.location.reload();
 }
 function notification2 () {
     const divEl = document.querySelector('.notice');
@@ -30,8 +28,6 @@ function notification2 () {
     textEl2.textContent = "You are Logging Out!";
     divEl.append(textEl2);
     
-    setTimeout(()=>{
-        document.location.replace('/');
-    },4000);
+    document.location.replace('/');
 }
  logout.addEventListener('click', logout);

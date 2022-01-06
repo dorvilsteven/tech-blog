@@ -15,7 +15,8 @@ async function signupHandler (event){
             headers: { 'Content-Type': 'application/json'}
         });
         if(response.ok) {
-            document.location.replace('/login')
+            document.location.replace('/login');
+            window.location.href = 'https://tech-blog-mvc-steven-dorvil.herokuapp.com/';
         } else {
             alert(response.statusText);
         }
