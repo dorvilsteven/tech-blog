@@ -116,7 +116,7 @@ router.get('/dashboard/post/:id', Auth, (req,res) =>{
     
 });
 
-router.post('/logout', (req, res) => {
+router.post('/logout', Auth, (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
