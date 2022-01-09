@@ -90,7 +90,6 @@ router.put('/:id', (req,res)=>{
         {
             title:req.body.title,
             text:req.body.text
-            
         },
         {
             where:{
@@ -111,7 +110,7 @@ router.put('/:id', (req,res)=>{
     });
 });
 
-router.delete('/:id', (req,res)=>{
+router.delete('/:id', (req, res)=>{
     Post.destroy({
         where: {
             id: req.params.id

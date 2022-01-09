@@ -3,7 +3,7 @@ const { User, Post, Comment } = require('../../models');
 
 router.get('/', (req, res) => {
     User.findAll({
-        attributes: ['id', 'username', 'password',]
+        attributes: ['id', 'username', 'password']
     })
     .then((userData) => res.json(userData))
     .catch((err) => {
@@ -67,16 +67,16 @@ router.post('/login', (req, res) => {
         }
     })
     .then((userData) => {
-        const validPassword = dbUserData.checkPassword(req.body.password)
+        const validPassword = userData.checkPassword(req.body.password)
         if (!userData || !validPassword) {
-            res.status(400).json({ message: 'credentials are incorrect (either username, or password, or both), please try again.'});
+            res.status(400).json({ message: 'please try again.'});
             return;
         }
         req.session.save(() => {
             req.session.user_id = userData.id;
-            // req.session.username = userData.username;
+            req.session.username = userData.username;
             req.session.loggedIn = true;
-            res.json({ user: userData, message: `Welcome ${userData.username}.`});
+            res.json({ user: userData, message: `Welcome.`});
         })
     })
     .catch((err) => {
